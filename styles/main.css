@@ -5,17 +5,16 @@
 }
 
 body {
-    background-color: salmon;
-}
-
-.main {
+    min-height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: lightseagreen;
 }
 
-@media (max-width: 800px) {
-    .main {
+@media (max-width: 1190px) {
+    body {
+        height: 1100px;
         flex-direction: column;
     }
 }

@@ -11,8 +11,8 @@ template.innerHTML = `
         }
 
         .contenedor {
-            width: 325px;
-            height: 120px;
+            width: 100%;
+            height: 105px;
             border-radius: 5px;
             box-shadow: 0px 0px 15px darkgray;    
             padding: 15px 10px;
@@ -57,7 +57,7 @@ class PrimerComponente extends HTMLElement {
                 this.p.innerText = this.p.innerText.slice(0,input_length)
             }else{
                 this.p.innerText += this.input.value[input_length-1]
-                this.input.value = '|'.repeat(input_length)
+                this.input.value = '*'.repeat(input_length)
             }
         })
     }

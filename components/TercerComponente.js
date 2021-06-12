@@ -11,8 +11,7 @@ template.innerHTML = `
         }
 
         .contenedor {
-            width: 325px;
-            height: 120px;
+            width: 100%;
             border-radius: 5px;
             box-shadow: 0px 0px 15px darkgray;    
             padding: 15px 10px;
@@ -26,6 +25,14 @@ template.innerHTML = `
             font-size: large;
             outline: none;
         }
+
+        ul {
+            height: 100px;
+            list-style-type: none;
+            padding-left: 10px;
+            overflow: auto;
+        }
+
     </style>
     <div class="contenedor">
         <input type="text">
@@ -49,13 +56,18 @@ class TercerComponente extends HTMLElement {
         this.ul = this.shadowRoot.querySelector('ul')
         this.input.addEventListener('input',(event)=>{
             let input_length = this.input.value.length
-            let ul_length = this.ul.getElementsByTagName('li').length
-            if(input_length < ul_length){
-                this.ul.removeChild(this.ul.lastChild)
+            let is_number = '0'<=this.input.value[input_length-1] && this.input.value[input_length-1] <= '9'
+            if(is_number){
+                let ul_length = this.ul.getElementsByTagName('li').length
+                if(input_length < ul_length){
+                    this.ul.removeChild(this.ul.lastChild)
+                }else{
+                    let item = document.createElement('li')
+                    item.innerText = numeros[this.input.value[input_length-1]]
+                    this.ul.appendChild(item)
+                }
             }else{
-                let item = document.createElement('li')
-                item.innerText = numeros[this.input.value[input_length-1]]
-                this.ul.appendChild(item)
+                this.input.value = this.input.value.substring(0,this.input.value.length-1)
             }
         })
     }

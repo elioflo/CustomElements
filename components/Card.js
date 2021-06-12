@@ -12,7 +12,6 @@ template.innerHTML = `
         .tarjeta {
             width: 360px;
             border-radius: 5px;
-            box-shadow: 0px 5px 10px darkgray;
             font-family: sans-serif;
             padding: 15px 20px;
             letter-spacing: 1px;

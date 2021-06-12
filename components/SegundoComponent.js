@@ -11,8 +11,7 @@ template.innerHTML = `
         }
 
         .contenedor {
-            width: 325px;
-            height: 120px;
+            width: 100%;
             border-radius: 5px;
             box-shadow: 0px 0px 15px darkgray;    
             padding: 15px 10px;
@@ -25,7 +24,6 @@ template.innerHTML = `
             border: 1px solid darkgray;
             font-size: large;
             outline: none;
-            margin-top: 20px;
         }
 
     </style>
