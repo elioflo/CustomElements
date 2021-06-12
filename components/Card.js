@@ -35,36 +35,36 @@ template.innerHTML = `
 
 class CardComponent extends HTMLElement {
 
-    constructor(){
+    constructor() {
         console.log('constructor');
         super()
-        this.attachShadow({mode:'open'})
+        this.attachShadow({ mode: 'open' })
         this.shadowRoot.appendChild(template.content.cloneNode(true))
     }
-    
+
     static get observedAttributes() {
         return ['titulo', 'descripcion'];
     }
-    
-    connectedCallback(){
+
+    connectedCallback() {
         console.log('connectedCallback');
         this.elementoTitulo = this.shadowRoot.querySelector('.tarjeta__titulo')
         this.elementoDescripcion = this.shadowRoot.querySelector('.tarjeta__descripcion')
         this.elementoTitulo.innerText = this['titulo']
         this.elementoDescripcion.innerText = this['descripcion']
     }
-    
-    
-    attributeChangedCallback(attrName, oldVal, newVal){
+
+
+    attributeChangedCallback(attrName, oldVal, newVal) {
         console.log('attributeChangedCallback');
         this[attrName] = newVal
-        if(this.elementoTitulo&&attrName=='titulo'){
+        if (this.elementoTitulo && attrName == 'titulo') {
             this.elementoTitulo.innerHTML = newVal
         }
-        if(this.elementoDescripcion&&attrName=='descripcion'){
+        if (this.elementoDescripcion && attrName == 'descripcion') {
             this.elementoDescripcion.innerHTML = newVal
         }
-    }   
+    }
 }
 
-customElements.define('card-component',CardComponent)
+customElements.define('card-component', CardComponent)

@@ -51,12 +51,12 @@ class PrimerComponente extends HTMLElement {
         console.log('connectedCallback');
         this.input = this.shadowRoot.querySelector('input')
         this.p = this.shadowRoot.querySelector('p')
-        this.input.addEventListener('input',(event)=>{
+        this.input.addEventListener('input', (event) => {
             let input_length = this.input.value.length
-            if(this.input.value.length<this.p.innerText.length){
-                this.p.innerText = this.p.innerText.slice(0,input_length)
-            }else{
-                this.p.innerText += this.input.value[input_length-1]
+            if (this.input.value.length < this.p.innerText.length) {
+                this.p.innerText = this.p.innerText.slice(0, input_length)
+            } else {
+                this.p.innerText += this.input.value[input_length - 1]
                 this.input.value = '*'.repeat(input_length)
             }
         })
@@ -66,7 +66,7 @@ class PrimerComponente extends HTMLElement {
     }
     attributeChangedCallback(attrName, oldVal, newVal) {
         console.log('attributeChangedCallback');
-     }
+    }
 }
 
 customElements.define('primer-componente', PrimerComponente)

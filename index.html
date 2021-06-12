@@ -11,19 +11,20 @@
 </head>
 
 <body>
-    
+
     <card-component titulo="Primer Componente"
-    descripcion="Un input de tipo texto que cuando se vaya escribiendo el texto se reemplace por *, pero que el valor se pueda mostrar inmediatamente debajo.">
-    <primer-componente></primer-componente>
+        descripcion="Un input de tipo texto que cuando se vaya escribiendo el texto se reemplace por *, pero que el valor se pueda mostrar inmediatamente debajo.">
+        <primer-componente></primer-componente>
     </card-component>
-    <card-component titulo="Segundo Componente" descripcion="Un input de tipo texto que no permita mas de 10 caracteres (intentar no usar la propiedad size) sino que generar una propiedad llamada longitud-máxima que empiece con el valor 10 por defecto pero que se pueda cambiar la longitud.">
+    <card-component titulo="Segundo Componente"
+        descripcion="Un input de tipo texto que no permita mas de 10 caracteres (intentar no usar la propiedad size) sino que generar una propiedad llamada longitud-máxima que empiece con el valor 10 por defecto pero que se pueda cambiar la longitud.">
         <segundo-componente longitud-maxima=20></segundo-componente>
     </card-component>
     <card-component titulo="Tercer Componente" descripcion="Un input de tipo texto que al momento de escribir un numero escriba el texto
 correspondiente uno debajo del otro. (Funciona solo con numeros)">
         <tercer-componente></tercer-componente>
     </card-component>
-    
+
     <script type="module" src="./components/PrimerComponente.js"></script>
     <script type="module" src="./components/SegundoComponent.js"></script>
     <script type="module" src="./components/TercerComponente.js"></script>

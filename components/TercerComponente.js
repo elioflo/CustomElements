@@ -40,7 +40,7 @@ template.innerHTML = `
     </div>
 `
 
-const numeros = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve']
+const numeros = ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve']
 
 class TercerComponente extends HTMLElement {
 
@@ -54,20 +54,20 @@ class TercerComponente extends HTMLElement {
         console.log('connectedCallback');
         this.input = this.shadowRoot.querySelector('input')
         this.ul = this.shadowRoot.querySelector('ul')
-        this.input.addEventListener('input',(event)=>{
+        this.input.addEventListener('input', (event) => {
             let input_length = this.input.value.length
-            let is_number = '0'<=this.input.value[input_length-1] && this.input.value[input_length-1] <= '9'
-            if(is_number){
+            let is_number = '0' <= this.input.value[input_length - 1] && this.input.value[input_length - 1] <= '9'
+            if (is_number) {
                 let ul_length = this.ul.getElementsByTagName('li').length
-                if(input_length < ul_length){
+                if (input_length < ul_length) {
                     this.ul.removeChild(this.ul.lastChild)
-                }else{
+                } else {
                     let item = document.createElement('li')
-                    item.innerText = numeros[this.input.value[input_length-1]]
+                    item.innerText = numeros[this.input.value[input_length - 1]]
                     this.ul.appendChild(item)
                 }
-            }else{
-                this.input.value = this.input.value.substring(0,this.input.value.length-1)
+            } else {
+                this.input.value = this.input.value.substring(0, this.input.value.length)
             }
         })
     }

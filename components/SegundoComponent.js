@@ -43,15 +43,15 @@ class SegundoComponente extends HTMLElement {
     static get observedAttributes() {
         return ['longitud-maxima'];
     }
-    
+
 
     connectedCallback() {
         console.log('connectedCallback');
         this.input = this.shadowRoot.querySelector('input')
-        this['longitud-maxima'] = this['longitud-maxima']?this['longitud-maxima']:10;
-        this.input.addEventListener('input',(event)=>{
-            if (this.input.value.length>this['longitud-maxima']) {
-                this.input.value = this.input.value.substring(0,this['longitud-maxima'])
+        this['longitud-maxima'] = this['longitud-maxima'] ? this['longitud-maxima'] : 10;
+        this.input.addEventListener('input', (event) => {
+            if (this.input.value.length > this['longitud-maxima']) {
+                this.input.value = this.input.value.substring(0, this['longitud-maxima'])
             }
         })
     }
@@ -61,7 +61,7 @@ class SegundoComponente extends HTMLElement {
     attributeChangedCallback(attrName, oldVal, newVal) {
         console.log('attributeChangedCallback');
         this[attrName] = newVal
-     }
+    }
 }
 
 customElements.define('segundo-componente', SegundoComponente)
