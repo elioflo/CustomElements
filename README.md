@@ -1,18 +1,17 @@
-# CustomElements
+# TP1 Front
 
-## Requisitos:
+Realizar 3 componentes que cumplan con la siguiente funcionalidad
 
-- Saber lo basico de HTML y CSS
-- Saber JavaScript 
+1.  Un input de tipo texto que cuando se vaya escribiendo el texto se reemplace por | ( pipes), pero que el valor se pueda mostrar inmediatamente debajo
 
-## Objetivo?
+2.  Un input de tipo texto que no permita mas de 10 caracteres ( intentar no usar la propiedad size) sino que generar una propiedad llamada longitud-máxima que empiece con el valor 10 poder defecto pero que se pueda cambiar la longitud
 
-La idea es crear tus propios tags. 
+3.  Un input de tipo texto que al momento de escribir un numero escriba el texto correspondiente uno debajo del otro
+ejemplo 
+- 123..
+- uno
+- dos
+- tres
+- ...
 
-## Para que?
-
-De esta forma le agregas semantica a tu web. Por ejemplo para hacer una card podrias usar 
-
-`<div class="card"> </div>`
-
-pero queda mejor `<card-component></card-component>`. Ahora sabes que hace ese pedazo de html.
+Cada input tiene que ser un javascript diferente con su propio tag ejemplo <tag-password> <tag-algo> etc.
